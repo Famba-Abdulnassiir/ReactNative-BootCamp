@@ -10,14 +10,29 @@ meaning that functions are treated like any other first-class object — they ca
  */
 
 //Map
-const x = [0,1,2,3];
-function addOne(number){
-    return number + 1;
+// const x = [0,1,2,3];
+// function addOne(number){
+//     return number + 1;
+// }
+// addOne(1);
+
+// x.map;
+// x.map(addOne);
+// console.log(x);
+
+function map(arr, fn) {
+    const newArr = [];
+    arr.forEach(function (val) {
+        newArr.push(fn(val));
+        
+    })
+
+    return newArr
+        
+};
+
+function addOne(num) {
+    return num + 1;
 }
-addOne(1);
-
-x.map;
-x.map(addOne);
-console.log(x);
-
-//
+const x = [0,1,2,3];
+console.log(map(x, addOne));
